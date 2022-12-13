@@ -10,6 +10,8 @@
 
   <properties>
     <slf4j.version>1.7.30</slf4j.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -35,6 +37,8 @@
       <version>1.4.5</version>
       <scope>test</scope>
     </dependency>
+
+
 
 
     <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-reload4j -->
@@ -68,8 +72,8 @@
             </goals>
             <configuration>
               <outputDirectory>${project.build.directory}/lib</outputDirectory>
-              <overWriteRelease>false</overWriteRelease>
-              <overWriteSnapshot>false</overWriteSnapshot>
+              <!--<overWriteRelease>false</overWriteRelease>
+              <overWriteSnapshot>false</overWriteSnapshot> -->
               <overWriteIfNewer>true</overWriteIfNewer>
             </configuration>
         </execution>
@@ -89,6 +93,21 @@
             <update>true</update>
           </configuration>
       </plugin>
+
+      <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.10.1</version>
+      </plugin>
+
+      <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.2</version>
+      </plugin>
+
     </plugins>
   </build>
 </project>

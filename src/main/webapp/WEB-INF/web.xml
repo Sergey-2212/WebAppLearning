@@ -5,6 +5,18 @@
 http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
   <display-name>Archetype Created Web Application</display-name>
+
+
+<servlet>
+  <servlet-name>SecondServlet</servlet-name>
+  <servlet-class>SecondServlet</servlet-class>
+</servlet>
+
+  <servlet-mapping>
+    <servlet-name>SecondServlet</servlet-name>
+    <url-pattern>/second_servlet</url-pattern>
+  </servlet-mapping>
+
 </web-app>
 
 

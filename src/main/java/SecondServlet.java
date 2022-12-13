@@ -8,13 +8,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Slf4j
-@WebServlet(name = "SecondServlet", urlPatterns = "/second_servlet")
+
 public class SecondServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         log.info("GET request.");
         Product product;
-            
+        for (int i = 0; i < 10; i++) {
+            product = new Product("Name " + i, i);
+            resp.getWriter().printf("<h1>" + product.toString() + "</h1>");
+        }
+
     }
 }
